@@ -1,38 +1,88 @@
-.App {
-  text-align: center;
+html {
+  font-size: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  box-sizing: border-box;
+  width: 100vw;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  background-image: url(https://i.postimg.cc/3xpfQV5s/noise-bg.png);
+  background-color: #155;
+}
+
+.App {
+  display: grid;
+  grid-template-areas:
+    'title title'
+    'link link'
+    'editor preview';
+  place-items: center;
+  gap: 20px;
+  padding: 50px 0;
+}
+
+#title {
+  grid-area: title;
+  color: rgb(182, 170, 170);
+  font-family: 'Rubik', sans-serif;
+  text-align: center;
+  font-size: 5rem;
+  text-shadow: 1px 1px rgb(59, 59, 59);
+}
+
+#editor,
+#preview {
+  width: 500px;
+  height: 600px;
+  padding: 24px 14px 14px 14px;
+  border: none;
+  border-radius: 3px;
+}
+
+ #editor {
+  grid-area: editor;
+  background: #eee;
+  box-shadow: 5px 5px #448484;
+}
+
+#preview {
+  grid-area: preview;
+  background: #333;
   color: white;
+  font-family: 'Molengo', sans-serif;
+  font-size: 1.2rem;
+  box-shadow: 5px 5px #448484;
+  overflow-y: auto;
+} 
+
+a {
+  color: #D6EFA3;
 }
 
-.App-link {
-  color: #61dafb;
+li {
+  margin-left: 3rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+blockquote {
+  margin-left: 2rem;
+  padding-left: 0.6rem;
+  border-left: 0.4rem solid grey;
+} 
+
+@media only screen and (max-width: 1050px) {
+  .App {
+    grid-template-areas:
+      'title'
+      'editor'
+      'preview';
   }
-  to {
-    transform: rotate(360deg);
+
+  #editor,
+  #preview {
+    width: 90vw;
+    height: 400px;
   }
 }
