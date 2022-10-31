@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="App">
       <h1 id="title">Markdown Previewer</h1>
-      <a id="link" href="https://github.com/fedeshirolamy/Markdown-Previewer">Code</a>
+      <a class="btn btn-info" id="link" href="https://github.com/fedeshirolamy/Markdown-Previewer">Code</a>
       <div>
         <textarea id="editor" onChange={(e) => {
           setText(e.target.value);
